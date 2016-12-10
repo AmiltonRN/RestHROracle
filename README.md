@@ -1,1 +1,1 @@
-# Servidor para o Scheme HR do Oracle 11G
+# Servidor Rest usando Flask e SQLALCHEMY para o Scheme HR do Oracle 11G
