@@ -11,9 +11,11 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy as SQL
 from sqlalchemy.ext.declarative import DeclarativeMeta
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'oracle://hr:hr@192.168.10.3:1521/XE'
 db = SQL(app)
+
 
 class AlchemyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -92,6 +94,7 @@ class Employees(db.Model):
         self.manager_id = manager_id
         self.department_id = department_id
 
+        
 class JobHistory(db.Model):
     __tableName__ = 'JOB_HISTORY'
     id = db.Column('EMPLOYEE_ID', db.Integer, primary_key=True)
@@ -119,6 +122,7 @@ class Jobs(db.Model):
         self.job_title = job_title
         self.min_salary = min_salary
         self.max_salary = max_salary
+        
         
 class Locations(db.Model):
     __tableName__ = 'LOCATIONS'
